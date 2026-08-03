@@ -49,6 +49,24 @@ jobs:
         # The site uses no mermaid diagrams; jekyll-diagrams only warns when mmdc
         # is absent. Keep the install non-fatal so a broken package never blocks a deploy.
         npm install -g @mermaid-js/mermaid-cli || true
+    # Runs before the deploy on purpose. jekyll-imagemagick logs "convert: not
+    # found" and carries on, so the build exits 0 while every responsive .webp
+    # silently goes missing — and a browser picking a <source> that 404s does not
+    # fall back to the <img>, so images just stop rendering. CI cannot catch that
+    # without an explicit assertion. It also cannot run after bin/deploy, which
+    # git-adds ignored paths (vendor/bundle included) into the deploy branch and
+    # leaves the working tree without the gems.
+    - name: Verify responsive images are generated
+      run: |
+        bundle exec jekyll build --destination /tmp/verify
+        count=$(find /tmp/verify/assets/img -name '*.webp' | wc -l)
+        echo "generated $count webp variants"
+        test "$count" -gt 0 || { echo "::error::No .webp variants generated - is ImageMagick installed?"; exit 1; }
+        for f in changyeon-480.webp changyeon-800.webp changyeon-1400.webp; do
+          test -s "/tmp/verify/assets/img/$f" || { echo "::error::missing $f"; exit 1; }
+        done
+        echo "profile image variants present"
+
     - name: Setup deploy options
       id: setup
       run: |
@@ -71,18 +89,3 @@ jobs:
         SRC_BRANCH: ${{ steps.setup.outputs.SRC_BRANCH }}
         DEPLOY_BRANCH: ${{ steps.setup.outputs.DEPLOY_BRANCH }}
       run: yes | bin/deploy --verbose $NO_PUSH --src "$SRC_BRANCH" --deploy "$DEPLOY_BRANCH"
-
-    # bin/deploy checks out the deploy branch, so _site is gone by now; rebuild
-    # into a scratch dir purely to assert the responsive variants exist. Without
-    # this the imagemagick failure is invisible: the build exits 0 and only a
-    # human looking at the rendered page notices the images are missing.
-    - name: Verify responsive images were generated
-      run: |
-        bundle exec jekyll build --destination /tmp/verify
-        count=$(find /tmp/verify/assets/img -name '*.webp' | wc -l)
-        echo "generated $count webp variants"
-        test "$count" -gt 0 || { echo "::error::No .webp variants were generated - ImageMagick likely missing"; exit 1; }
-        for f in changyeon-480.webp changyeon-800.webp changyeon-1400.webp; do
-          test -s "/tmp/verify/assets/img/$f" || { echo "::error::missing $f"; exit 1; }
-        done
-        echo "profile image variants present"
