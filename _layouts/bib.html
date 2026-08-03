@@ -18,7 +18,13 @@
           {{reference}}
         {%- else %}
           <!-- Title -->
-          <div class="title">{{entry.title}}</div>
+          {%- comment -%}
+            Optional `citations` field on a bib entry, appended to the title in
+            parentheses. Written by hand rather than pulled from Scholar, so keep
+            the wording approximate ("100+ citations") — an exact count here goes
+            stale silently, since nothing refreshes it.
+          {%- endcomment -%}
+          <div class="title">{{entry.title}}{%- if entry.citations %} (<strong>{{ entry.citations }}</strong>){%- endif -%}</div>
           <!-- Author -->
           <div class="author">
           {%- for author in entry.author_array -%}
@@ -86,17 +92,6 @@
           <div class="periodical">
             {{ periodical | strip }}
           </div>
-          {%- comment -%}
-            Optional `citations` field on a bib entry, rendered next to the
-            venue. Written by hand rather than pulled from Scholar, so it is a
-            point-in-time figure — keep the wording approximate ("100+") rather
-            than a precise count that silently goes stale.
-          {%- endcomment -%}
-          {%- if entry.citations %}
-          <div class="periodical citations">
-            {{ entry.citations }}
-          </div>
-          {%- endif %}
         {%- endif %}
 
           <!-- Links/Buttons -->
