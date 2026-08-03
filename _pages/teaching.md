@@ -3,7 +3,7 @@ layout: page
 permalink: /teaching/
 title: teaching
 description: Teaching assistantships at Seoul National University.
-nav: true
+nav: false
 ---
 
 I served as a teaching assistant for the following courses at Seoul National

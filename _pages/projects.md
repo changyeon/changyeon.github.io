@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Systems work on RDMA networking, DPUs, and memory disaggregation.
-nav: true
+nav: false
 display_categories: [work]
 horizontal: false
 ---
