@@ -563,12 +563,3 @@ html.transition *:after {
   font-size: 0.875rem;
   padding-top: 0.25rem;
 }
-
-// Optional "citations" line on a bibliography entry, set by the `citations`
-// field in papers.bib. Uses the theme colour so it reads as a distinction
-// rather than more publication metadata, and stays smaller than the venue line.
-.citations {
-  color: var(--global-theme-color);
-  font-size: 0.8rem;
-  margin-top: 0.1rem;
-}
