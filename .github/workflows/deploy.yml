@@ -35,6 +35,14 @@ jobs:
           ${{ runner.os }}-gems-
     - name: Install deps
       run: |
+        # jekyll-imagemagick shells out to `convert` to build the responsive
+        # .webp variants behind every <picture>. The ubuntu-24.04 runner image no
+        # longer ships ImageMagick, and the plugin only logs "convert: not found"
+        # and carries on, so the build still exits 0 while every responsive image
+        # silently goes missing. Install it, then assert it is really there.
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq imagemagick
+        convert -version
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
@@ -63,3 +71,18 @@ jobs:
         SRC_BRANCH: ${{ steps.setup.outputs.SRC_BRANCH }}
         DEPLOY_BRANCH: ${{ steps.setup.outputs.DEPLOY_BRANCH }}
       run: yes | bin/deploy --verbose $NO_PUSH --src "$SRC_BRANCH" --deploy "$DEPLOY_BRANCH"
+
+    # bin/deploy checks out the deploy branch, so _site is gone by now; rebuild
+    # into a scratch dir purely to assert the responsive variants exist. Without
+    # this the imagemagick failure is invisible: the build exits 0 and only a
+    # human looking at the rendered page notices the images are missing.
+    - name: Verify responsive images were generated
+      run: |
+        bundle exec jekyll build --destination /tmp/verify
+        count=$(find /tmp/verify/assets/img -name '*.webp' | wc -l)
+        echo "generated $count webp variants"
+        test "$count" -gt 0 || { echo "::error::No .webp variants were generated - ImageMagick likely missing"; exit 1; }
+        for f in changyeon-480.webp changyeon-800.webp changyeon-1400.webp; do
+          test -s "/tmp/verify/assets/img/$f" || { echo "::error::missing $f"; exit 1; }
+        done
+        echo "profile image variants present"
