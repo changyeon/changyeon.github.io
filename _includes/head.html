@@ -12,7 +12,15 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
-    <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/{{ site.highlight_theme }}.css" />
+    {%- comment -%}
+      Self-hosted. This used to load from a third-party proxy that is now a
+      parked domain serving a redirect page instead of CSS, so the stylesheet
+      had silently stopped working. Vendored from
+      github.com/jwarby/jekyll-pygments-themes; the site now depends on no
+      outside host for it. Liquid comment so the old domain name never ships
+      in the rendered HTML.
+    {%- endcomment -%}
+    <link rel="stylesheet" href="{{ '/assets/css/pygments-github.css' | relative_url }}" />
 
     <!-- Styles -->
     {% if site.icon != empty -%}

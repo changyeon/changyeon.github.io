@@ -7,7 +7,13 @@
       }
     };
   </script>
-  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@{{ site.mathjax.version }}/es5/tex-mml-chtml.js"></script>
+  {%- comment -%}
+    SRI hash is tied to mathjax 3.2.0 specifically. If site.mathjax.version in
+    _config.yml is bumped, recompute it or the script will be blocked:
+      curl -sL https://cdn.jsdelivr.net/npm/mathjax@<ver>/es5/tex-mml-chtml.js \
+        | openssl dgst -sha384 -binary | openssl base64 -A
+  {%- endcomment -%}
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@{{ site.mathjax.version }}/es5/tex-mml-chtml.js" integrity="sha384-+BSz3oj3ILMYvOBr16U9i0H4RZRmGyQQ+1q9eqr8T3skmAFrJk8GmgwgqlCZdNSo" crossorigin="anonymous"></script>
   {%- comment -%}
     The polyfill.io script that shipped with this theme was removed: the domain
     was sold in 2024 and began serving malicious code to visitors. MathJax 3
