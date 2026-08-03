@@ -2,10 +2,20 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
-nav: false
+description: Teaching assistantships at Seoul National University.
+nav: true
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+I served as a teaching assistant for the following courses at Seoul National
+University.
 
-Organize your courses by years, topics, or universities, however you like!
+| Term | Course |
+| --- | --- |
+| 2018 Fall | M1522.000800 System Programming |
+| 2017 Fall | M1522.000800 System Programming |
+| 2017 Spring | 4190.308 Computer Architecture |
+| 2015 Fall | 4190.203 System Programming |
+| 2014 Fall | 4190.308 Computer Architecture |
+| 2013 Spring | 4190.203 System Programming |
+| 2012 Fall | 4190.203 System Programming |
+| 2012 Spring | 4190.203 System Programming |
