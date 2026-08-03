@@ -46,9 +46,12 @@ jobs:
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
-        # The site uses no mermaid diagrams; jekyll-diagrams only warns when mmdc
-        # is absent. Keep the install non-fatal so a broken package never blocks a deploy.
-        npm install -g @mermaid-js/mermaid-cli || true
+        # No mermaid CLI here on purpose. @mermaid-js/mermaid-cli pulls Puppeteer,
+        # which downloads a full Chromium — it hung this step for over ten minutes
+        # against a ~2 minute baseline. The site contains no diagrams, and
+        # jekyll-diagrams merely logs "Command Not Found: mmdc" when it is absent.
+        # If diagrams are ever added, install it here again and expect the extra
+        # minutes.
     # Runs before the deploy on purpose. jekyll-imagemagick logs "convert: not
     # found" and carries on, so the build exits 0 while every responsive .webp
     # silently goes missing — and a browser picking a <source> that 404s does not
