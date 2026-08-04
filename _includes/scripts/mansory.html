@@ -1,6 +1,11 @@
   {%- if site.enable_mansory -%}
   <!-- Mansory & imagesLoaded -->
-  <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-  <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  {%- comment -%}
+    Pinned to exact versions with SRI hashes. These previously floated on @4,
+    so any future 4.x release would have been executed unverified — the same
+    shape of exposure that made the polyfill CDN takeover possible.
+  {%- endcomment -%}
+  <script defer src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script defer src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js" integrity="sha384-YnGSHPPWEUDKMHFPOVmNP7Xyfwx5G0CHet6IoNgiX6CbFZS8gCeIfEgB1MgPwjdI" crossorigin="anonymous"></script>
   <script defer src="{{ '/assets/js/mansory.js' | relative_url }}" type="text/javascript"></script>
   {%- endif -%}

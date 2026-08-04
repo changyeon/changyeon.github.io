@@ -2,9 +2,9 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Systems work on RDMA networking, DPUs, and memory disaggregation.
 nav: false
-display_categories: [work, fun]
+display_categories: [work]
 horizontal: false
 ---
 

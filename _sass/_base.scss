@@ -563,3 +563,12 @@ html.transition *:after {
   font-size: 0.875rem;
   padding-top: 0.25rem;
 }
+
+// The `citations` label under a publication's venue badge. Theme colour rather
+// than a literal purple: it resolves to #B509AC in light mode and the cyan
+// accent in dark mode, so it stays legible in both.
+.citations {
+  color: var(--global-theme-color);
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+}

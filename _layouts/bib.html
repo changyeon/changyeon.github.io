@@ -10,6 +10,16 @@
           <abbr class="badge">{{entry.abbr}}</abbr>
           {%- endif -%}
         {%- endif -%}
+        {%- comment -%}
+          Optional `citations` field on a bib entry, sitting under the venue
+          badge in this left column. Bold only, no colour or size override.
+          Written by hand rather than pulled from Scholar, so keep the wording
+          approximate ("100+ citations") — an exact count goes stale silently,
+          since nothing here refreshes it.
+        {%- endcomment -%}
+        {%- if entry.citations %}
+        <div class="citations"><strong>{{ entry.citations }}</strong></div>
+        {%- endif -%}
         </div>
 
         <!-- Entry bib key -->
