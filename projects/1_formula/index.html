@@ -12,27 +12,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Changyeon  Jo | blog</title>
+    <title>Changyeon  Jo | FORMULA</title>
     <meta name="author" content="Changyeon  Jo" />
-    <meta name="description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta name="description" content="an FPGA-based AI RNIC for large-scale AI clusters" />
     <meta name="keywords" content="RDMA, RoCEv2, DPU, NVMe-oF, memory disaggregation, systems software, performance engineering" />
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="blank" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="blank | blog" />
-    <meta property="og:url" content="https://www.changyeon.net/blog/" />
-    <meta property="og:description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta property="og:title" content="blank | FORMULA" />
+    <meta property="og:url" content="https://www.changyeon.net/projects/1_formula/" />
+    <meta property="og:description" content="an FPGA-based AI RNIC for large-scale AI clusters" />
     
     <meta property="og:locale" content="en" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="blog" />
-    <meta name="twitter:description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta name="twitter:title" content="FORMULA" />
+    <meta name="twitter:description" content="an FPGA-based AI RNIC for large-scale AI clusters" />
     
     
 
@@ -44,11 +41,10 @@
           "@type": "Person",
           "name": "Changyeon  Jo"
         },
-        "url": "https://www.changyeon.net/blog/index.html",
+        "url": "https://www.changyeon.net/projects/1_formula/",
         "@type": "WebSite",
-        "description": "Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-",
-        "headline": "blog",
+        "description": "an FPGA-based AI RNIC for large-scale AI clusters",
+        "headline": "FORMULA",
         "sameAs": ["https://orcid.org/0000-0002-9707-1256", "https://scholar.google.com/citations?user=NWiAz9YAAAAJ", "https://www.researchgate.net/profile/Changyeon-Jo", "https://github.com/changyeon", "https://www.linkedin.com/in/changyeon-jo-5736926b", "https://dblp.org/pid/129/2873.html"],
         "name": "Changyeon  Jo",
         "@context": "https://schema.org"
@@ -70,7 +66,7 @@
     <!-- Styles -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://www.changyeon.net/blog/">
+    <link rel="canonical" href="https://www.changyeon.net/projects/1_formula/">
 
     <!-- Dark Mode -->
     <script src="/assets/js/theme.js"></script>
@@ -110,8 +106,8 @@
               </li>
 
               <!-- Toogle theme mode -->
-              <div class = "toggle-container">
-                <a id = "light-toggle">
+              <div class="toggle-container">
+                <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
                 </a>
@@ -124,28 +120,34 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- page.html -->
+        <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+          <header class="post-header">
+            <h1 class="post-title">FORMULA</h1>
+            <p class="post-description">an FPGA-based AI RNIC for large-scale AI clusters</p>
+          </header>
 
+          <article>
+            <p>FORMULA is an FPGA-based RDMA NIC for large-scale AI clusters, built around a
+line-rate RoCEv2 engine. It adds multi-path RDMA transport and a programmable
+congestion control framework to sustain performance at scale, and a configurable
+block that offloads data-centric processing tasks at line rate — all in a
+low-profile form factor with software compatibility for deployability.</p>
 
-  <ul class="post-list">
-    
-  </ul>
+<p>To appear at the 59th IEEE/ACM International Symposium on Microarchitecture
+(MICRO-59) Industry Track, Athens, Greece, 2026.</p>
 
-  
+          </article>
 
-</div>
+        </div>
 
     </div>
 
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        &copy; Copyright 2026 Changyeon  Jo. Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+        © Copyright 2026 Changyeon  Jo. Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
       </div>
     </footer>

@@ -12,27 +12,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Changyeon  Jo | blog</title>
+    <title>Changyeon  Jo | projects</title>
     <meta name="author" content="Changyeon  Jo" />
-    <meta name="description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta name="description" content="Systems work on RDMA networking, DPUs, and memory disaggregation." />
     <meta name="keywords" content="RDMA, RoCEv2, DPU, NVMe-oF, memory disaggregation, systems software, performance engineering" />
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="blank" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="blank | blog" />
-    <meta property="og:url" content="https://www.changyeon.net/blog/" />
-    <meta property="og:description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta property="og:title" content="blank | projects" />
+    <meta property="og:url" content="https://www.changyeon.net/projects/" />
+    <meta property="og:description" content="Systems work on RDMA networking, DPUs, and memory disaggregation." />
     
     <meta property="og:locale" content="en" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="blog" />
-    <meta name="twitter:description" content="Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-" />
+    <meta name="twitter:title" content="projects" />
+    <meta name="twitter:description" content="Systems work on RDMA networking, DPUs, and memory disaggregation." />
     
     
 
@@ -44,11 +41,10 @@
           "@type": "Person",
           "name": "Changyeon  Jo"
         },
-        "url": "https://www.changyeon.net/blog/index.html",
+        "url": "https://www.changyeon.net/projects/",
         "@type": "WebSite",
-        "description": "Changyeon Jo — system software engineer at MangoBoost, working on RDMA-based networking, DPUs, and memory/storage disaggregation for AI infrastructure.
-",
-        "headline": "blog",
+        "description": "Systems work on RDMA networking, DPUs, and memory disaggregation.",
+        "headline": "projects",
         "sameAs": ["https://orcid.org/0000-0002-9707-1256", "https://scholar.google.com/citations?user=NWiAz9YAAAAJ", "https://www.researchgate.net/profile/Changyeon-Jo", "https://github.com/changyeon", "https://www.linkedin.com/in/changyeon-jo-5736926b", "https://dblp.org/pid/129/2873.html"],
         "name": "Changyeon  Jo",
         "@context": "https://schema.org"
@@ -70,7 +66,7 @@
     <!-- Styles -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://www.changyeon.net/blog/">
+    <link rel="canonical" href="https://www.changyeon.net/projects/">
 
     <!-- Dark Mode -->
     <script src="/assets/js/theme.js"></script>
@@ -110,8 +106,8 @@
               </li>
 
               <!-- Toogle theme mode -->
-              <div class = "toggle-container">
-                <a id = "light-toggle">
+              <div class="toggle-container">
+                <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
                 </a>
@@ -124,28 +120,112 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- page.html -->
+        <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
+          <header class="post-header">
+            <h1 class="post-title">projects</h1>
+            <p class="post-description">Systems work on RDMA networking, DPUs, and memory disaggregation.</p>
+          </header>
+
+          <article>
+            <!-- pages/projects.md -->
+<div class="projects">
+  <!-- Display categorized projects -->
+  <h2 class="category">work</h2>
+  <!-- Generate cards for each project -->
+  <div class="grid">
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/1_formula/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">FORMULA</h2>
+            <p class="card-text">an FPGA-based AI RNIC for large-scale AI clusters</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/2_rocev2/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">RoCEv2 driver</h2>
+            <p class="card-text">host driver stack and validation for an in-house RoCEv2 IP</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/3_mlperf_storage/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">MLPerf Storage</h2>
+            <p class="card-text">DPU-accelerated NVMe/TCP storage for AI training</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/4_rackmem/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">RackMem</h2>
+            <p class="card-text">remote memory for virtualized environments</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/5_live_migration_ml/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">Live migration modeling</h2>
+            <p class="card-text">a machine learning approach to VM live migration modeling</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- _includes/projects.html -->
+    <div class="grid-item">
+      <a href="/projects/6_vm_checkpoint/">
+        <div class="card hoverable">
+          <div class="card-body">
+            <h2 class="card-title text-lowercase">VM checkpoint &amp; restore</h2>
+            <p class="card-text">fast, space-efficient VM state management</p>
+            <div class="row ml-1 mr-1 p-0">
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
-
-
-  <ul class="post-list">
-    
-  </ul>
-
-  
-
 </div>
+
+          </article>
+
+        </div>
 
     </div>
 
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        &copy; Copyright 2026 Changyeon  Jo. Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+        © Copyright 2026 Changyeon  Jo. Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
       </div>
     </footer>
