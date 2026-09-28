@@ -17,6 +17,7 @@ I'm Changyeon Jo, a system software engineer at MangoBoost, where I work on high
 
 I lead the Solution Evaluation Team, responsible for system-level performance engineering and validation of MangoBoost's AI storage and networking products.
 My work spans low-level system software, performance analysis, and end-to-end evaluation of AI infrastructure, with an emphasis on scalability, latency, and reliability.
+I also lead the architecture of a cloud performance-analytics platform for a production LLM inference service built on vLLM and SGLang.
 Earlier at MangoBoost I developed device drivers for the company's RoCEv2 IP.
 Before joining, I was a staff engineer at Samsung Electronics.
 
